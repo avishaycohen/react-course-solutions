@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Guess from './Guess'
 
+
+// Why did you not save "target" and "cheating" in state?
 const App = () => {
     // computer guess a number
     const target = getRandomInt(1, 1001);

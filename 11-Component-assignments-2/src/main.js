@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useState } from 'react';
 
+// I usually prefer the function() syntax
+// function App() { ... }
 const App = () => {
+  // Even more important - do you really need 3 state variables?
     const [seconds, setSeconds] = useState(0)
     const [minutes, setMinutes] = useState(0)
     const [hours, setHours] = useState(0)
@@ -14,6 +17,11 @@ const App = () => {
         marginBottom: "6px"
     }
 
+  // A cool way to refactor this code is to use a "factor"
+  // value instead of a time letter
+  // for example - instead of 's' pass 1, instead of m pass 60 and instead of h pass 3600
+  // then you can always multiply the newValue by that factor,
+  // instead of the if/else
     function handleChanges(event, timeLetter) {
         const newValue = Number(event.target.value)
         if (timeLetter === 's') {
