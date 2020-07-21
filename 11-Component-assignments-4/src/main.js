@@ -9,6 +9,7 @@ const App = () => {
         setUserColor(event.target.value);
     }
 
+  // by the way - the task here was to change the background color - not the text color
     return (
         <div>
             <input type="color" onChange={changeColor}/>
