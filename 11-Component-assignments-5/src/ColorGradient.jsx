@@ -9,20 +9,19 @@ export default function ColorGradient(props) {
     // generate series of colors
     let colorsArray = tColor.monochromatic(10);
 
-    return (
-        <>
-            {
-            colorsArray.map(
-                color => <div
-                            key={color.toHexString()}
-                            className="boxed"
-                            style={{
-                                backgroundColor: color.toHexString(),
-                                width: "100px",
-                                height: "100px",
-                            }}
-                        />
-            )}
-        </>
-    )
+    function renderColorBox(color) {
+        return (
+            <div
+                key={color.toHexString()}
+                className="boxed"
+                style={{
+                    backgroundColor: color.toHexString(),
+                    width: "100px",
+                    height: "100px",
+                }}
+            />
+        )
+    }
+
+    return colorsArray.map(renderColorBox);
 }
