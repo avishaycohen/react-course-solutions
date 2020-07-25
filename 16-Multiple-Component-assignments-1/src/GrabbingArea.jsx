@@ -1,8 +1,10 @@
 import React from 'react';
 
+const _ = require("lodash")
+
 export default function GrabbingArea(props) {
     // define props
-    const { tiles, changeScore, randomRed } = props;
+    const { amount, communistIndex, changeScore } = props;
 
     function selectedTile(isCommunist) {
         changeScore(isCommunist);
@@ -11,14 +13,12 @@ export default function GrabbingArea(props) {
     return (
         <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
             {
-                tiles.map(
-                    tile =>
+                _.range(amount).map(
+                    index =>
                         <Box
-                            key={Math.random()}
-                            isCommunist={tile}
+                            key={index}
+                            isCommunist={index === communistIndex ? true : false}
                             onClick={selectedTile}
-                            randomRed={randomRed}
-                            tiles={tiles}
                         />
                 )
             }
@@ -27,7 +27,7 @@ export default function GrabbingArea(props) {
 }
 
 function Box(props) {
-    const { isCommunist, onClick, randomRed} = props;
+    const { isCommunist, onClick } = props;
     const color = isCommunist ? 'red' : 'gray';
 
     const boxStyle = {
@@ -39,7 +39,6 @@ function Box(props) {
 
     function scoreAndShuffle() {
         onClick(isCommunist);
-        randomRed();
     }
 
     return (
