@@ -13,10 +13,13 @@ export default function SortableTable(props) {
         return line.map((item, index) => <th key={index} onClick={changeSort}>{item}</th>);
     }
 
+  // Did you notice each item has an id? why did you use index and not the item's id as key? Can you explain the difference?
     function createTd(line) {
         return line.map((item, index) => <td key={index}>{item}</td>);
     }
 
+  // Please see I published in slack the function _.sortBy
+  // which might have simplified this code
     function changeSort(event) {
         const newSorter = event.target.textContent;
         if (sortBy === newSorter) {
