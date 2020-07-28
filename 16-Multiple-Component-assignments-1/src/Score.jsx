@@ -2,11 +2,10 @@ import React from 'react';
 
 export default function Score(props) {
     // define props
-    const { score, resetScore, randomRed } = props;
+    const { score, resetScore } = props;
     
     function startNewGame() {
         resetScore();
-        randomRed();
     }
 
     return (
