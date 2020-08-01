@@ -7,9 +7,11 @@ import ShowFilmInfo from './StarWarsFilmInfo.jsx';
 import ShowCharacterInfo from './StarWarsCharacter.jsx';
 
 export default function StarwarsBaseComponent(props) {
-  const [data, setData] = useState(null);
+  // define props
   const { id, type } = props;
-
+  // define state
+  const [data, setData] = useState(null);
+  // define effect
   useEffect(function () {
     setData(null);
     const $xhr = $.getJSON(`https://swapi.dev/api/${type}/${id}/`, setData);
@@ -18,7 +20,7 @@ export default function StarwarsBaseComponent(props) {
       $xhr.abort();
     }
   }, [id]);
-
+  // define functions
   function componentTypeCheck() {
     if (type === 'films') {
       return <ShowFilmInfo data={data}/>;
@@ -27,7 +29,7 @@ export default function StarwarsBaseComponent(props) {
       return <ShowCharacterInfo data={data}/>;
     }
   }
-
+  
   return (
     <div>
       <pre>Debug: id = {id}, type = {type}</pre>

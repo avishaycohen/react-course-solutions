@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import { useState } from 'react';
 
-import StarwarsCharacter from './StarWarsCharacter.jsx'
 import StarwarsBaseComponent from './StarwarsBaseComponent.jsx'
 
 const App = () => {

@@ -4,8 +4,6 @@ import React from 'react';
 export default function ShowFilmInfo(props) {
     // define props
     const { data } = props;
-    // define state
-    // define functions
 
     return (
         <>
