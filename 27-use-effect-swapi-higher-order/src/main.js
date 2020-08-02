@@ -29,11 +29,12 @@ const ShowFilmInfo = withSWAPIrequest(function ShowFilmInfo(props) {
 
   return (
     <>
-      {data &&
-        <>
+      {data
+        ? <>
           <p><b>Title:</b> {data.title}</p>
           <p><b>Opening crawl</b> {data.opening_crawl}</p>
         </>
+        : <p> loading film, please wait :)</p>
       }
     </>
   )
@@ -46,12 +47,13 @@ const ShowCharacterInfo = withSWAPIrequest(function ShowCharacterInfo(props) {
 
   return (
     <>
-      {data &&
-        <>
-          <p><b>Name:</b> {data.name}</p>
-          <p><b>Hair Color:</b> {data.hair_color}</p>
-          {filmIdArr.map((id) => <ShowFilmInfo key={id} id={id} type='films' />)}
-        </>
+      {data
+        ? <>
+            <p><b>Name:</b> {data.name}</p>
+            <p><b>Hair Color:</b> {data.hair_color}</p>
+            {filmIdArr.map((id) => <ShowFilmInfo key={id} id={id} type='films' />)}
+          </>
+        : <p> loading person, please wait :)</p>
       }
     </>
   )
