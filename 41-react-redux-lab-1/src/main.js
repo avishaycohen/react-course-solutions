@@ -8,12 +8,14 @@ import Messages from './messages';
 import store from './redux/store';
 import './main.css';
 import NewMessage from './addMessage';
+import MsgCounter from './msgCounter';
 
 const App = (props) => (
   <Provider store={store}>
    <div>
      <Header />
      <Banner />
+     <MsgCounter />
      <NewMessage />
      <Messages />
    </div>
