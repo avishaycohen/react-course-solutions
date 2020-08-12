@@ -18,4 +18,6 @@ export function setUsername(newUsername) {
   return { type: 'SET_USERNAME', payload: newUsername };
 }
 
-
+export function removeMessage(msgID) {
+  return { type: 'REMOVE_MESSAGE', payload: msgID };
+}

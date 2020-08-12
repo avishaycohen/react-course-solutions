@@ -38,6 +38,10 @@ const reducer = produce((state, action) => {
     case 'RECEIVED_ROOMS':
       state.rooms = action.payload;
       break;
+
+    case 'REMOVE_MESSAGE':
+      state.messages = state.messages.filter(msg => msg.id !== action.payload)
+      break;
   }
 }, initialState);
 
