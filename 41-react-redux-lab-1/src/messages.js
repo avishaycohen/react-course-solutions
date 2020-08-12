@@ -17,9 +17,8 @@ export default connect(mapStateToProps)(function Messages(props) {
 
     return (
         <div className='messages'>
-            <label>
-                <h2>Stored Messages:</h2>
-                <table className='msgTable'>
+            <label><h2>Stored Messages:</h2></label>
+            <table className='msgTable'>
                     <thead>
                         <tr>
                             <th>id</th>
@@ -39,7 +38,6 @@ export default connect(mapStateToProps)(function Messages(props) {
                             )
                         }</tbody>
                 </table>
-            </label>
         </div>
     )
 });

@@ -18,13 +18,11 @@ export default connect(mapStateToProps)(function SingleMessage(props) {
     }
 
     return (
-        <>
         <tr>
             <td>{msg.id}</td>
             <td>{msg.text}</td>
             <td>{msg.from}</td>
-            <td><button onClick={deleteRow}>delete</button></td>
+            <td><button id={msg.id} onClick={deleteRow}>delete</button></td>
         </tr>
-        </>
     )
 });
