@@ -16,7 +16,6 @@ export default connect(mapStateToProps)(function NewMessage(props) {
     function handleSubmit(e) {
         e.preventDefault();
         const newMsg = {
-            id: messages.length,
             text: e.target.text.value,
             from: username
         }

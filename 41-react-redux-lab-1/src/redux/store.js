@@ -14,7 +14,7 @@ const initialState = {
 };
 
 function nextId(items) {
-  return Math.max(...items.map(i => i.id)) + 1;
+  return Math.max(...items.map(i => i.id), -1) + 1;
 }
 
 const reducer = produce((state, action) => {
@@ -23,8 +23,12 @@ const reducer = produce((state, action) => {
       state.username = action.payload;
       break;
 
-    case 'RECEIVED_MESSAGE':      
-      state.messages.push(action.payload);
+    case 'RECEIVED_MESSAGE':
+      state.messages.push({
+        id: nextId(state.messages),
+        text: action.payload.text,
+        from: action.payload.from}
+      );
       break;
 
     case 'CREATE_ROOM':
